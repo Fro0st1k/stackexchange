@@ -1,0 +1,4 @@
+<div *ngIf="(questionInfo$ | async) as question" class="question-page">
+  <sec-question-item  [question]="question"></sec-question-item>
+  <sec-answers-list [answers]="question.answers"></sec-answers-list>
+</div>

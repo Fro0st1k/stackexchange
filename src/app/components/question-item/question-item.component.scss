@@ -1,0 +1,30 @@
+@import "../../../styles/variables/colors";
+
+.question {
+  width: 100%;
+  background-color: $block-color;
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: 0 0 8px $main-shadow-color;
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+.question-body {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.question-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid $main-border-color;
+
+  &__last-update {
+    color: $gray-font-color;
+    font-size: 12px;
+  }
+}

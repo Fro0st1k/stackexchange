@@ -1,0 +1,15 @@
+<div class="post-info">
+  <div class="post-info__answers-count" [ngClass]="{'post-info__answers-count--answered': question.is_answered}">
+    <span class="post-info__answers-count-value">{{question.answer_count}}</span>
+    <span class="post-info__answers-count-text">answers</span>
+  </div>
+  <div class="post-info__header">
+    <h3 class="post-info__header-title" routerLink="{{ '/question/' + question.question_id }}">{{question.title}}</h3>
+    <div class="post-info__header-creation-date">Creation date: {{question.creation_date * 1000 | date}}</div>
+
+    <div class="post-info__statistics">
+      <div class="post-info__votes">{{question.score}} votes</div>
+      <div class="post-info__views">{{question.view_count}} views</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+@import "../../../../../styles/variables/colors";
+
+.post-body {
+
+  & code {
+    display: block;
+    background-color: $code-block-background-color;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 10px 0;
+    overflow-x: auto;
+  }
+
+  & p {
+    margin: 0 0 3px;
+  }
+}

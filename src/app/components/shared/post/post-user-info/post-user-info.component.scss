@@ -1,0 +1,21 @@
+@import "../../../../../styles/variables/colors";
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    align-self: flex-end;
+    display: block;
+    width: 32px;
+    height: 32px;
+  }
+
+  &__name {
+    font-size: 14px;
+    margin-bottom: 3px;
+    cursor: pointer;
+    color: $blue-font-color;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,21 @@
+@import "../../../../../styles/variables/colors";
+
+.post-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    padding: 2px 10px;
+    border-radius: 3px;
+    margin: 10px 10px 0 0;
+    box-shadow: 0 0 4px $main-shadow-color;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: $main-contrast-color;
+      color: $white-font-color;
+    }
+  }
+}

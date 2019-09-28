@@ -1,0 +1,8 @@
+<div class="answer" [ngClass]="{'answer--accepted': answer.is_accepted}">
+  <sec-post-body [body]="answer.body"></sec-post-body>
+  <div class="answer-footer">
+    <div class="answer-footer__last-update">Last update: {{answer.last_activity_date * 1000 | date}}</div>
+    <sec-post-user-info [owner]="answer.owner"></sec-post-user-info>
+  </div>
+</div>
+
