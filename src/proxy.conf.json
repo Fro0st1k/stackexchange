@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "https://api.stackexchange.com/2.2",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "changeOrigin": true
+  }
+}
