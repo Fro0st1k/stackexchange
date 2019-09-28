@@ -29,9 +29,9 @@ const config = {
 export class RequestsService {
   constructor(private crudService: CrudService) {}
 
-  public getSearchResult(word): Observable<ISearchResult> {
+  public getSearchResult(options): Observable<ISearchResult> {
     const requestUrl = config.api.search;
-    const requestOptions = this.mergeOptions({ intitle: word });
+    const requestOptions = this.mergeOptions(options);
     return this.crudService.getData(requestUrl, { params: requestOptions });
   }
 

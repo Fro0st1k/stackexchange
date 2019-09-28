@@ -1,2 +1,5 @@
-<sec-search-field></sec-search-field>
-<sec-questions-list *ngIf="(questions$ | async) as questions" [questions]="questions.items"></sec-questions-list>
+<div class="search">
+  <sec-search-field (searchFieldChangedEvent)="getQuestions($event, true)"></sec-search-field>
+  <sec-questions-list [questions]="questions?.items"></sec-questions-list>
+  <sec-local-spinner *ngIf="isLoading"></sec-local-spinner>
+</div>

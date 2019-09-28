@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './components/core/app.component';
@@ -18,6 +19,7 @@ import { PostTagsComponent } from './components/shared/post/post-tags/post-tags.
 import { PostBodyComponent } from './components/shared/post/post-body/post-body.component';
 import { PostInfoComponent } from './components/shared/post/post-info/post-info.component';
 import { HeaderComponent } from './components/header/header.component';
+import { LocalSpinnerComponent } from './components/shared/local-spinner/local-spinner.component';
 
 @NgModule({
   declarations: [
@@ -35,12 +37,15 @@ import { HeaderComponent } from './components/header/header.component';
     PostTagsComponent,
     PostBodyComponent,
     PostInfoComponent,
-    HeaderComponent
+    HeaderComponent,
+    LocalSpinnerComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
