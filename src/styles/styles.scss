@@ -3,6 +3,7 @@
 @import 'shared/question';
 
 .container {
+  min-height: calc(100vh - 80px);
   position: relative;
   max-width: 1024px;
   width: 100%;

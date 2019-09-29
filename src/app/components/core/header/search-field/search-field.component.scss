@@ -27,4 +27,44 @@
     border: none;
     box-shadow: inset 1px 1px 3px $main-shadow-color;
   }
+
+  &__options {
+    z-index: 100;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background-color: $block-color;
+    border-radius: 3px;
+    box-shadow: 0 0 8px $main-shadow-color;
+  }
+
+  &__options-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid $main-border-color;
+    line-height: 30px;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  &__options-item-label {
+    padding: 0 15px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  &__options-icon {
+    background-image: url("../../../../../assets/icons/options.png");
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 21px;
+    height: 21px;
+    cursor: pointer;
+  }
 }

@@ -1,3 +1,18 @@
 <form [formGroup]="searchForm" class="search-form">
-  <input formControlName="searchField" class="search-form__field" placeholder="Search" type="text">
+  <input formControlName="intitle" class="search-form__field" placeholder="Search" type="text">
+  <div (click)="toggleOptions()" class="search-form__options-icon"></div>
+  <ul *ngIf="isOptionsVisible" class="search-form__options">
+    <li class="search-form__options-item">
+      <label class="search-form__options-item-label">
+        <input formControlName="sort" type="checkbox">
+        Sort by votes
+      </label>
+    </li>
+    <li class="search-form__options-item">
+      <label class="search-form__options-item-label">
+        <input formControlName="order" type="checkbox">
+        Reverse order
+      </label>
+    </li>
+  </ul>
 </form>

@@ -33,13 +33,13 @@ export class SearchService {
       .subscribe(data => this.additionalQuestions.next(data));
   }
 
-  public getQuestions(searchValue: string): void {
+  public getQuestions(formValue): void {
     this.page = 1;
     this.searchData.next({} as ISearchResult);
     this.additionalQuestions.next(null);
-    this.currentSearchValue = searchValue.trim();
+    this.currentSearchValue = formValue.intitle.trim();
     if (this.currentSearchValue) {
-      this.getQuestionsData({ intitle: this.currentSearchValue,  page: this.page });
+      this.getQuestionsData({...formValue, intitle: this.currentSearchValue,  page: this.page });
     }
   }
 

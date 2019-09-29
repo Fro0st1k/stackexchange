@@ -2,25 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ISearchResult } from '../../entities/search';
 import { CrudService } from '../crud/crud.service';
-
-const config = {
-  api: {
-    search: 'api/search',
-    question: 'api/questions',
-    userQuestions: 'api/users',
-  },
-  defaultOptions: {
-    page: 1,
-    pagesize: 20,
-    order: 'desc',
-    sort: 'activity',
-    site: 'stackoverflow',
-    key: 'U4DMV*8nvpm3EOpvf69Rxw(('
-  },
-  additionalOptions: {
-    filter: '!-*jbN-o8P3E5'
-  }
-};
+import { config } from './requests.config';
 
 @Injectable({
   providedIn: 'root'
@@ -43,7 +25,7 @@ export class RequestsService {
 
   public getQuestionByTag(tagName: string): Observable<ISearchResult> {
     const requestUrl = config.api.search;
-    const requestOptions = this.mergeOptions({ tagged: tagName});
+    const requestOptions = this.mergeOptions({ tagged: tagName, sort: 'votes' });
     return this.crudService.getData(requestUrl, { params: requestOptions });
   }
 

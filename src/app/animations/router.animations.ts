@@ -13,6 +13,7 @@ function slideTo(direction) {
   return [
     query(':enter, :leave', [
       style({
+        minHeight: 'calc(100vh - 80px)',
         position: 'absolute',
         [direction]: 0,
         width: '100%'
@@ -23,10 +24,10 @@ function slideTo(direction) {
     ]),
     group([
       query(':leave', [
-        animate('600ms ease', style({ [direction]: '100vw'}))
+        animate('400ms ease', style({ [direction]: '100vw'}))
       ], optional),
       query(':enter', [
-        animate('600ms ease', style({ [direction]: '0%'}))
+        animate('400ms ease', style({ [direction]: '0%'}))
       ])
     ]),
   ];
