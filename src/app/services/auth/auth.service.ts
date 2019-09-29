@@ -20,7 +20,7 @@ export class AuthService {
       this.accountState.next(true);
       return null;
     } else {
-      return 'User name or password incorrect';
+      return 'Invalid username or password';
     }
   }
 
@@ -32,7 +32,7 @@ export class AuthService {
       this.login(userLoginData);
       return null;
     } else {
-      return 'This login already exist';
+      return 'This login already exists';
     }
   }
 

@@ -10,7 +10,7 @@ import { AuthService } from '../../../services/auth/auth.service';
 })
 
 export class RegistrationPopUpComponent implements OnInit {
-  @Input() payload = {};
+  @Input() payload = {} as any;
   public registrationPopUpForm: FormGroup;
 
   constructor(
@@ -45,7 +45,7 @@ export class RegistrationPopUpComponent implements OnInit {
         ...this.payload,
         message: this.authService.registration(this.registrationPopUpForm.value)
       };
-      this.closePopUp();
+      this.payload.message === null ? this.closePopUp() : null;
     }
   }
 

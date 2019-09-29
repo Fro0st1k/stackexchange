@@ -47,7 +47,7 @@ export class LoginPopUpComponent implements OnInit {
         message: this.authService.login(this.loginPopUpForm.value)
       };
       this.payload.redirectUrl ? this.router.navigate([this.payload.redirectUrl]) : null;
-      this.closePopUp();
+      this.payload.message === null ? this.closePopUp() : null;
     }
   }
 }
