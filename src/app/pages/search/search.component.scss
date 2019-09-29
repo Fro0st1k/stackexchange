@@ -1,3 +1,7 @@
 .search-page {
   display: flex;
+
+  &__question-list {
+    width: 100%;
+  }
 }

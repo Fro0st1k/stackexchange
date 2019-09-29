@@ -20,7 +20,9 @@ export class SearchService {
   private hasMore: boolean;
   private page = 1;
 
-  constructor(private requestsService: RequestsService) {}
+  constructor(
+    private requestsService: RequestsService,
+  ) {}
 
   public getAdditionalQuestions(userOrTagInfo: any): void {
     const isUserQuestions = typeof userOrTagInfo.userId === 'number';

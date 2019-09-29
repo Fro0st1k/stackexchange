@@ -1,5 +1,5 @@
-<div class="search-page">
-  <sec-questions-list *ngIf="(questions$ | async) as questions" [questions]="questions?.items"></sec-questions-list>
+<div *ngIf="(questions$ | async) as questions" class="search-page">
+  <sec-questions-list class="search-page__question-list" [questions]="questions?.items"></sec-questions-list>
   <sec-questions-light-list class="additional-table" *ngIf="(this.additionalQuestions$ | async) as additionalQuestions" [questions]="additionalQuestions"></sec-questions-light-list>
 </div>
 <sec-local-spinner *ngIf="isLoading$ | async"></sec-local-spinner>

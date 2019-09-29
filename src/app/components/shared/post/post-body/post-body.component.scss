@@ -1,7 +1,7 @@
 @import "../../../../../styles/variables/colors";
 
 .post-body {
-
+  overflow: hidden;
   & code {
     display: block;
     background-color: $code-block-background-color;

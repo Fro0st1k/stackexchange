@@ -17,6 +17,10 @@
     cursor: pointer;
     font-weight: 600;
 
+    &:focus {
+      border: none;
+    }
+
     &:after {
       position: absolute;
       top: -10px;

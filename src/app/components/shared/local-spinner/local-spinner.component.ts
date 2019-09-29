@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'sec-local-spinner',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class LocalSpinnerComponent implements OnInit {
+  @Input() isAttachedToTop: boolean;
   constructor() {}
   ngOnInit() {}
 }

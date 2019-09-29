@@ -4,7 +4,7 @@
     <span class="post-info__answers-count-text">answers</span>
   </div>
   <div class="post-info__header">
-    <h3 class="post-info__header-title" routerLink="{{ '/question/' + question.question_id }}">{{question.title}}</h3>
+    <h3 class="post-info__header-title" [innerHTML]="question.title" routerLink="{{ '/question/' + question.question_id }}"></h3>
     <div class="post-info__header-creation-date">Creation date: {{question.creation_date * 1000 | date}}</div>
 
     <div class="post-info__statistics">

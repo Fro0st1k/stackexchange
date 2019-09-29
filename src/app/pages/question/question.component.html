@@ -2,4 +2,4 @@
   <sec-question-item [withoutTags]="true" class="question-page__question" [question]="question"></sec-question-item>
   <sec-answers-list [answers]="question.answers"></sec-answers-list>
 </div>
-<sec-local-spinner *ngIf="isLoading"></sec-local-spinner>
+<sec-local-spinner *ngIf="isLoading" [isAttachedToTop]="true"></sec-local-spinner>
