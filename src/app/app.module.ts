@@ -7,7 +7,6 @@ import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './components/core/app.component';
 import { ButtonComponent } from './components/shared/button/button.component';
 import { SearchComponent } from './pages/search/search.component';
-import { ResultsComponent } from './pages/results/results.component';
 import { QuestionComponent } from './pages/question/question.component';
 import { SearchFieldComponent } from './components/search-field/search-field.component';
 import { QuestionsListComponent } from './components/questions-list/questions-list.component';
@@ -20,13 +19,17 @@ import { PostBodyComponent } from './components/shared/post/post-body/post-body.
 import { PostInfoComponent } from './components/shared/post/post-info/post-info.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LocalSpinnerComponent } from './components/shared/local-spinner/local-spinner.component';
+import { PopUpComponent } from './components/shared/dialog/pop-up/pop-up.component';
+import { ShadingComponent } from './components/shared/dialog/shading/shading.component';
+import { LoginPopUpComponent } from './components/dialogs/login-pop-up/login-pop-up.component';
+import { RegistrationPopUpComponent } from './components/dialogs/registration-pop-up/registration-pop-up.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonComponent,
     SearchComponent,
-    ResultsComponent,
     QuestionComponent,
     SearchFieldComponent,
     QuestionsListComponent,
@@ -38,14 +41,23 @@ import { LocalSpinnerComponent } from './components/shared/local-spinner/local-s
     PostBodyComponent,
     PostInfoComponent,
     HeaderComponent,
-    LocalSpinnerComponent
+    LocalSpinnerComponent,
+    PopUpComponent,
+    ShadingComponent,
+    LoginPopUpComponent,
+    RegistrationPopUpComponent
+  ],
+  entryComponents: [
+    LoginPopUpComponent,
+    RegistrationPopUpComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

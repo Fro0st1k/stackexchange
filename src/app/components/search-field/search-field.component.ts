@@ -1,8 +1,8 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
-import { Router } from '@angular/router';
-import { debounceTime, distinctUntilChanged, filter, takeUntil } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
+import { SearchService } from '../../services/search/search.service';
 
 @Component({
   selector: 'sec-search-field',
@@ -13,11 +13,10 @@ import { debounceTime, distinctUntilChanged, filter, takeUntil } from 'rxjs/oper
 export class SearchFieldComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
   public searchForm: FormGroup;
-  @Output() searchFieldChangedEvent = new EventEmitter<string>();
 
   constructor(
     private fb: FormBuilder,
-    private router: Router
+    private searchService: SearchService
   ) {}
 
   ngOnInit() {
@@ -31,21 +30,14 @@ export class SearchFieldComponent implements OnInit, OnDestroy {
     this.watchSearchField();
   }
 
-  public goToResults(): void {
-    if (this.searchForm.valid) {
-      this.router.navigate([`/results/${this.searchForm.get('searchField').value}`]);
-    }
-  }
-
   private watchSearchField(): void {
     this.searchForm.get('searchField').valueChanges
       .pipe(
-        filter(text => text.length > 2),
         debounceTime(400),
         distinctUntilChanged(),
         takeUntil(this.destroy$),
       )
-      .subscribe((searchValue: string) => this.searchFieldChangedEvent.emit(searchValue));
+      .subscribe((searchValue: string) => this.searchService.getQuestions(searchValue));
   }
 
   ngOnDestroy(): void {

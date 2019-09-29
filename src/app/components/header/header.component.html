@@ -1,10 +1,10 @@
 <header class="header">
   <div class="container container--horizontal">
-    <div routerLink="" class="header__logo">StackExchange</div>
+    <div routerLink="/" class="header__logo">Stack<span>Exchange</span></div>
+    <sec-search-field class="header__search"></sec-search-field>
     <div class="header__user-menu">
       <ul class="header__controls">
-        <li class="header__controls-item">Login</li>
-        <li class="header__controls-item">Registration</li>
+        <li (click)="showPopUp('login')" class="header__controls-item">Login / Registration</li>
         <li class="header__controls-item">Logout</li>
       </ul>
     </div>

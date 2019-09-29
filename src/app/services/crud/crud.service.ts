@@ -12,4 +12,16 @@ export class CrudService {
   public getData(url, options?): Observable<any> {
     return this.http.get(url, options);
   }
+
+  public postData(url, options?): Observable<any> {
+    return this.http.post(url, options);
+  }
+
+  public updateData(url, options?): Observable<any> {
+    return this.http.put(url, options);
+  }
+
+  public deleteData(url, options?): Observable<any> {
+    return this.http.delete(url, options);
+  }
 }

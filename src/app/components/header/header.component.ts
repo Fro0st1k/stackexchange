@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PopUpService } from '../../services/dialogs/pop-up.service';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'sec-header',
@@ -7,6 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  constructor(
+    private popUpService: PopUpService,
+    private authService: AuthService
+  ) {}
+
   ngOnInit() {}
+
+  public showPopUp(popUpName: string): void {
+    this.popUpService.setPopUpState({ isOpen: true, name: popUpName});
+  }
 }

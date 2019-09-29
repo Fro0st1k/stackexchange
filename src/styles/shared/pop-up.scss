@@ -1,0 +1,93 @@
+@import "../variables/colors";
+
+.pop-up {
+  width: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $block-color;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 3px;
+
+  &__header {
+    font-size: 30px;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+
+  &__container {
+    padding: 20px 40px;
+  }
+
+  &__section {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__section-label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  &__section-field {
+    height: 40px;
+  }
+
+  &__btn {
+    border-radius: 3px;
+    height: 40px;
+    background-color: $main-contrast-color;
+    color: $white-font-color;
+  }
+
+  &__link {
+    cursor: pointer;
+    margin-top: 7px;
+    text-align: right;
+
+    span {
+      color: $blue-font-color;
+    }
+  }
+
+  &__close {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+
+    &:before,
+    &:after {
+      display: block;
+      position: absolute;
+      top: 2px;
+      left: 15px;
+      content: "";
+      width: 2px;
+      height: 28px;
+      background-color: $close-btn-color;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__message {
+
+  }
+}
+
