@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { slider } from '../../animations/router.animations';
+import { slider } from '../animations/router.animations';
 
 @Component({
   selector: 'sec-root',

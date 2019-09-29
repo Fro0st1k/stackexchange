@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PopUpService } from '../../services/dialogs/pop-up.service';
-import { AuthService } from '../../services/auth/auth.service';
+import { PopUpService } from '../../../services/dialogs/pop-up.service';
+import { AuthService } from '../../../services/auth/auth.service';
 import { Observable } from 'rxjs';
 import { share } from 'rxjs/operators';
 

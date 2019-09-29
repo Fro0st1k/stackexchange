@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { ISearchResult } from '../../entities/search';
 import { finalize, map } from 'rxjs/operators';
 import { IQuestion } from '../../entities/question';
+import { SearchService } from '../../services/search/search.service';
 
 @Component({
   selector: 'sec-question',
@@ -13,15 +14,19 @@ import { IQuestion } from '../../entities/question';
 })
 
 export class QuestionComponent implements OnInit {
-  questionInfo$: Observable<IQuestion>;
+  public questionInfo$: Observable<IQuestion>;
+  public additionalQuestions$: Observable<ISearchResult>;
   public isLoading = true;
+
   constructor(
     private activatedRoute: ActivatedRoute,
+    private searchService: SearchService,
     private requestsService: RequestsService
   ) {}
 
   ngOnInit() {
     this.questionInfo();
+    this.additionalQuestions$ = this.searchService.additionalQuestions$;
   }
 
   private questionInfo(): void {

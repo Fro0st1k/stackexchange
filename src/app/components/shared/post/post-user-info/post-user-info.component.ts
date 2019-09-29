@@ -9,12 +9,12 @@ import { IOwner } from '../../../../entities/owner';
 
 export class PostUserInfoComponent implements OnInit {
   @Input() owner: IOwner;
-  @Output() showUserQuestionsEvent = new EventEmitter<number>();
+  @Output() showUserQuestionsEvent = new EventEmitter<any>();
   constructor() {}
 
   ngOnInit() {}
 
-  public showUserQuestions(userId: number): void {
-    this.showUserQuestionsEvent.emit(userId);
+  public showUserQuestions(userId: number, userName: string): void {
+    this.showUserQuestionsEvent.emit({ userId, userName });
   }
 }

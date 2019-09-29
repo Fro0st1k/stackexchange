@@ -1,0 +1,11 @@
+<div class="question">
+  <div class="question-body">
+    <sec-post-info [question]="question"></sec-post-info>
+    <sec-post-user-info (showUserQuestionsEvent)="getAdditionalQuestions($event)" [owner]="question.owner"></sec-post-user-info>
+  </div>
+  <sec-post-body [body]="question.body"></sec-post-body>
+  <div [ngClass]="{'question-footer--light': withoutTags}" class="question-footer">
+    <sec-post-tags *ngIf="!withoutTags" (showQuestionByTagEvent)="getAdditionalQuestions($event)" [tags]="question.tags"></sec-post-tags>
+    <div class="question-footer__last-update">Last update: {{question.last_activity_date * 1000 | date}}</div>
+  </div>
+</div>

@@ -13,6 +13,8 @@ export class SearchService {
   public searchData$ = this.searchData.asObservable();
   private isLoading = new BehaviorSubject<boolean>(false);
   public isLoading$ = this.isLoading.asObservable();
+  private additionalQuestions = new BehaviorSubject(null);
+  public additionalQuestions$ = this.additionalQuestions.asObservable();
 
   private currentSearchValue: string;
   private hasMore: boolean;
@@ -20,9 +22,21 @@ export class SearchService {
 
   constructor(private requestsService: RequestsService) {}
 
+  public getAdditionalQuestions(userOrTagInfo: any): void {
+    const isUserQuestions = typeof userOrTagInfo.userId === 'number';
+    const subscription = isUserQuestions
+      ? this.requestsService.getAuthorQuestions(userOrTagInfo.userId)
+      : this.requestsService.getQuestionByTag(userOrTagInfo.tagName);
+
+    subscription
+      .pipe(map(data => ({ ...data, isUserQuestions, userOrTagInfo })))
+      .subscribe(data => this.additionalQuestions.next(data));
+  }
+
   public getQuestions(searchValue: string): void {
     this.page = 1;
     this.searchData.next({} as ISearchResult);
+    this.additionalQuestions.next(null);
     this.currentSearchValue = searchValue.trim();
     if (this.currentSearchValue) {
       this.getQuestionsData({ intitle: this.currentSearchValue,  page: this.page });

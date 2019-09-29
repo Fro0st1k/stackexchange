@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IAnswer } from '../../entities/answer';
+import { IAnswer } from '../../../entities/answer';
 
 @Component({
   selector: 'sec-answers-item',

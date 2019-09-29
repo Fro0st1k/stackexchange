@@ -1,0 +1,8 @@
+<div class="question question--light">
+  <div class="question-body">
+    <sec-post-info [question]="question" [light]="true"></sec-post-info>
+  </div>
+  <div class="question-footer question-footer--light">
+    <div class="question-footer__last-update">Last update: {{question.last_activity_date * 1000 | date}}</div>
+  </div>
+</div>

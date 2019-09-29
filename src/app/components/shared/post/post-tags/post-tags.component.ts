@@ -8,11 +8,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 export class PostTagsComponent implements OnInit {
   @Input() tags: string[];
-  @Output() showQuestionByTagEvent = new EventEmitter<string>();
+  @Output() showQuestionByTagEvent = new EventEmitter<any>();
   constructor() {}
   ngOnInit() {}
 
   public showQuestionByTag(tagName: string): void {
-    this.showQuestionByTagEvent.emit(tagName);
+    this.showQuestionByTagEvent.emit({ tagName });
   }
 }

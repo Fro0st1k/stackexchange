@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
-import { SearchService } from '../../services/search/search.service';
+import { SearchService } from '../../../../services/search/search.service';
 
 @Component({
   selector: 'sec-search-field',

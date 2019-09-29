@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { IQuestion } from '../../entities/question';
+import { IQuestion } from '../../../entities/question';
 
 @Component({
   selector: 'sec-questions-list',

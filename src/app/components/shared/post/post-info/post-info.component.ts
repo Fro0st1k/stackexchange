@@ -8,6 +8,7 @@ import { IQuestion } from '../../../../entities/question';
 })
 
 export class PostInfoComponent implements OnInit {
+  @Input() light: boolean;
   @Input() question: IQuestion;
   constructor() {}
   ngOnInit() {}

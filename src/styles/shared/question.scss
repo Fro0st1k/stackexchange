@@ -1,6 +1,6 @@
-@import "../../../styles/variables/colors";
+@import "../../styles/variables/colors";
 
-.answer {
+.question {
   width: 100%;
   background-color: $block-color;
   padding: 10px;
@@ -10,21 +10,37 @@
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
 
-  &--accepted {
-    box-shadow: 0 0 8px #5fba7d;
+  &--light {
+    width: 320px;
   }
 }
 
-.answer-footer {
+.question-body {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.question-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 10px;
-  margin-top: 10px;
   border-top: 1px solid $main-border-color;
+
+  &--light {
+    padding-top: 10px;
+  }
 
   &__last-update {
     color: $gray-font-color;
     font-size: 12px;
   }
+}
+
+.additional-table {
+  position: sticky;
+  top: 0;
+  min-width: 320px;
+  width: 320px;
+  margin-left: 10px;
 }

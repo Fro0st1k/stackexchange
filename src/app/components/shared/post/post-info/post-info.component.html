@@ -1,5 +1,5 @@
 <div class="post-info">
-  <div class="post-info__answers-count" [ngClass]="{'post-info__answers-count--answered': question.is_answered}">
+  <div *ngIf="!light" class="post-info__answers-count" [ngClass]="{'post-info__answers-count--answered': question.is_answered}">
     <span class="post-info__answers-count-value">{{question.answer_count}}</span>
     <span class="post-info__answers-count-text">answers</span>
   </div>

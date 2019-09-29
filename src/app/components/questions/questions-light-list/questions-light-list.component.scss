@@ -1,0 +1,14 @@
+@import "../../../../styles/variables/colors";
+
+.questions-light-list {
+  font-family: 'Roboto', sans-serif;
+
+  &__header {
+    font-size: 24px;
+    margin: 0 0 10px;
+
+    span {
+      color: $blue-font-color;
+    }
+  }
+}

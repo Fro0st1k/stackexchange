@@ -15,6 +15,7 @@ import { SearchService } from '../../services/search/search.service';
 
 export class SearchComponent implements OnInit, OnDestroy {
   public questions$: Observable<ISearchResult>;
+  public additionalQuestions$: Observable<ISearchResult>;
   public isLoading$: Observable<boolean>;
   private destroy$ = new Subject<void>();
 
@@ -27,6 +28,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.watchScrollPosition();
     this.questions$ = this.searchService.searchData$;
+    this.additionalQuestions$ = this.searchService.additionalQuestions$;
     this.isLoading$ = this.searchService.isLoading$;
   }
 
