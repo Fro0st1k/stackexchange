@@ -1,4 +1,8 @@
-<div *ngIf="(questionInfo$ | async) as question" class="question-page">
-  <sec-question-item  [question]="question"></sec-question-item>
-  <sec-answers-list [answers]="question.answers"></sec-answers-list>
+<div class="question-page">
+  <ng-container *ngIf="(questionInfo$ | async) as question">
+    <sec-question-item  [question]="question"></sec-question-item>
+    <sec-answers-list [answers]="question.answers"></sec-answers-list>
+  </ng-container>
+  <sec-local-spinner *ngIf="isLoading"></sec-local-spinner>
 </div>
+

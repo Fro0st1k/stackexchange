@@ -1,4 +1,4 @@
-<form class="registration-form pop-up">
+<form [formGroup]="registrationPopUpForm" class="registration-form pop-up">
   <div class="pop-up__close" (click)="closePopUp()"></div>
   <div class="registration-form__container pop-up__container">
     <div class="registration-form__header pop-up__header">Registration</div>
@@ -7,19 +7,19 @@
     </div>
     <div class="registration-form__section pop-up__section">
       <label class="registration-form__login-label pop-up__section-label" for="login">Login</label>
-      <input id="login" class="registration-form__login pop-up__section-field" autocomplete="on" type="text">
+      <input formControlName="login" id="login" class="registration-form__login pop-up__section-field" autocomplete="on" type="text">
     </div>
     <div class="registration-form__section pop-up__section">
       <label class="registration-form__password-label pop-up__section-label" for="password">Password</label>
-      <input id="password" class="registration-form__password pop-up__section-field" autocomplete="on" type="password">
+      <input formControlName="password" id="password" class="registration-form__password pop-up__section-field" autocomplete="on" type="password">
     </div>
     <div class="registration-form__section pop-up__section">
       <label class="registration-form__login-repeat pop-up__section-label" for="repeat">Repeat password</label>
-      <input id="repeat" class="registration-form__repeat pop-up__section-field" autocomplete="on" type="password">
+      <input formControlName="repeatPassword" id="repeat" class="registration-form__repeat pop-up__section-field" autocomplete="on" type="password">
       <div (click)="showLoginPopUp()" class="pop-up__link">Have an account? <span>Login</span></div>
     </div>
     <div class="login-form__section pop-up__section">
-      <button class="login-form__btn pop-up__btn">Register</button>
+      <button type="button" (click)="registration()" class="login-form__btn pop-up__btn">Register</button>
     </div>
   </div>
 </form>

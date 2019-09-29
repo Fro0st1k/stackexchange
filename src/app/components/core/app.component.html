@@ -1,8 +1,9 @@
 <sec-header></sec-header>
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
-
+<main class="container">
+  <div [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
+</main>
 <sec-shading>
   <sec-pop-up></sec-pop-up>
 </sec-shading>

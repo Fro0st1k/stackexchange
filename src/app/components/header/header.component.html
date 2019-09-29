@@ -4,8 +4,8 @@
     <sec-search-field class="header__search"></sec-search-field>
     <div class="header__user-menu">
       <ul class="header__controls">
-        <li (click)="showPopUp('login')" class="header__controls-item">Login / Registration</li>
-        <li class="header__controls-item">Logout</li>
+        <li (click)="showPopUp('login')" *ngIf="!(isLogin$ | async)" class="header__controls-item">Login / Registration</li>
+        <li *ngIf="isLogin$ | async" (click)="logout()" class="header__controls-item">Logout</li>
       </ul>
     </div>
   </div>

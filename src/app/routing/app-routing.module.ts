@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SearchComponent } from '../pages/search/search.component';
 import { QuestionComponent } from '../pages/question/question.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: SearchComponent
+    component: SearchComponent,
+    // data: { animation: 'isLeft' }
   },
   {
     path: 'question',
@@ -17,7 +19,9 @@ const routes: Routes = [
   {
     path: 'question/:questionId',
     pathMatch: 'full',
-    component: QuestionComponent
+    canActivate: [AuthGuard],
+    component: QuestionComponent,
+    data: { animation: 'isRight' }
   },
   {
     path: '**',

@@ -1,5 +1,5 @@
 <ng-container *ngIf="(popUpState$ | async) as popUpState">
-  <div *ngIf="popUpState.isOpen">
+  <div [@fade] *ngIf="popUpState.isOpen">
     <div (click)="closePopUp()" class="shading">
       <ng-content></ng-content>
     </div>
