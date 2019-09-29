@@ -7,9 +7,7 @@ import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
     component: SearchComponent,
-    // data: { animation: 'isLeft' }
   },
   {
     path: 'question',

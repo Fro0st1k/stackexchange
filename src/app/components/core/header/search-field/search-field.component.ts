@@ -1,8 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, map, takeUntil } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map, takeUntil, tap } from 'rxjs/operators';
 import { SearchService } from '../../../../services/search/search.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'sec-search-field',
@@ -17,6 +18,8 @@ export class SearchFieldComponent implements OnInit, OnDestroy {
 
   constructor(
     private fb: FormBuilder,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
     private searchService: SearchService
   ) {}
 
@@ -36,6 +39,7 @@ export class SearchFieldComponent implements OnInit, OnDestroy {
   private formChangesWatcher(): void {
     this.searchForm.valueChanges
       .pipe(
+        tap(() => this.redirectToSearchPage()),
         debounceTime(400),
         distinctUntilChanged(),
         takeUntil(this.destroy$),
@@ -50,6 +54,12 @@ export class SearchFieldComponent implements OnInit, OnDestroy {
 
   public toggleOptions(): void {
     this.isOptionsVisible = !this.isOptionsVisible;
+  }
+
+  private redirectToSearchPage(): void {
+    if (this.router.url !== '') {
+      this.router.navigate(['']);
+    }
   }
 
   ngOnDestroy(): void {
