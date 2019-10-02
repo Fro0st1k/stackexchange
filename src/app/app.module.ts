@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './pages/app.component';
-import { ButtonComponent } from './components/shared/button/button.component';
 import { SearchComponent } from './pages/search/search.component';
 import { QuestionComponent } from './pages/question/question.component';
 import { SearchFieldComponent } from './components/core/header/search-field/search-field.component';
@@ -30,7 +29,6 @@ import { QuestionsLightItemComponent } from './components/questions/questions-li
 @NgModule({
   declarations: [
     AppComponent,
-    ButtonComponent,
     SearchComponent,
     QuestionComponent,
     SearchFieldComponent,
